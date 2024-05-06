@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Contact;
+use App\Models\EducationItem;
 use App\Models\ExperienceItem;
 use App\Models\Footer;
 use App\Models\Home;
@@ -31,6 +32,7 @@ class PortfolioController extends Controller
         $serviceItems = ServiceItem::get();
         $skillItems = SkillItem::get();
         $experienceItems = ExperienceItem::latest()->get();
+        $educationItems = EducationItem::latest()->get();
 
         return view(
             'index',
@@ -45,7 +47,8 @@ class PortfolioController extends Controller
                 'portfolioItems',
                 'serviceItems',
                 'skillItems',
-                'experienceItems'
+                'experienceItems',
+                'educationItems'
             )
         );
     }

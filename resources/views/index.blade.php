@@ -86,9 +86,10 @@
 
                         <div class="tab-contents" id="education-content">
                             <ul>
-                                <li><span>2022 - Current</span><br>University of Southeastern Philippines</li>
-                                <li><span>2021</span><br>Maryknoll College of Panabo Inc.</li>
-                                <li><span>2016</span><br>Maryknoll College of Panabo Inc.</li>
+                                @foreach ($educationItems as $educationItem)
+                                    <li><span>{{ $educationItem->timespan }}</span><br>{{ $educationItem->institution }}
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
